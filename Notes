@@ -1,0 +1,42 @@
+1 - npm init -y
+    - create the template for the package.json file
+
+2 - npm i --save express body-parser
+    - !! "--save" to save dependencies to the project that user and developers will need for the app to work !!
+    - express - "de facto" server package for node
+    - body-parser - sent to the server as a string that is immutable
+
+3 - .gitignore
+    - file that tells git to ignore specific file, content, etc.
+
+4 - require dependencies 
+    - const express = require('express');
+    - const bodyParser = require('body-parser')
+    - **optional** const { json } = require('body-parser') - pulls just the json file from body-parcer
+
+5 - create port for your server 'const port = 3000' <-- can be pretty much any 4 digit number
+
+6 - create variable called app that invokes express 'const app = express()'
+
+7 - create a method for the user to use body-parser. app.use(bodyParser.json());
+
+8 - have server listen on port and console.log(`Listening on port: ${port}`).
+    - app.listen(port, () => {
+            console.log(`BLAH BLAH BLAH: PORT ${port}`);
+        })
+
+9 - define data type
+    - create an array of objects
+    - give the object variables
+
+10 - create an endpoint (get, post, put, delete) that gets certain data
+    - app.method('/api/nameOfApi', *callback func* function(req, res, next){......})
+    - '/api/' always use when working with an api!
+    - uses a call back function that takes in req, res, next.
+    - req - events that the api requires
+    - res - tells what to do with the response
+    - next - calls next func in the chain
+
+11 - tell the endpoint what to do when the callback has been invoked
+    - res.json(pokemon) - stringifies the response and sends it back up to the user
+    - res.json() does not need a return because it is the return. You can use return before res.json and it will not effect the overall outcome.
