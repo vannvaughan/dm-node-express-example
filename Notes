@@ -39,4 +39,4 @@
 
 11 - tell the endpoint what to do when the callback has been invoked
     - res.json(pokemon) - stringifies the response and sends it back up to the user
-    - res.json() does not need a return because it is the return. You can use return before res.json and it will not effect the overall outcome.
+    - res.json() does not need a return but will continue to run your function without either an if/else block or a return.
